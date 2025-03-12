@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello Power-Up</title>
+    <script src="https://p.trellocdn.com/power-up.min.js"></script>
+</head>
+<body>
+    <h1>Welcome to My Trello Power-Up</h1>
+    <script>
+        TrelloPowerUp.initialize({
+            // Example: Add a custom button to the board
+            'board-buttons': function (t, opts) {
+                return [{
+                    icon: 'https://yourdomain.com/icon.png', // Add a custom icon
+                    text: 'Click Me!',
+                    callback: function (t) {
+                        return t.popup({
+                            title: "Hello!",
+                            url: 'https://yourdomain.com/popup.html' // Load another page for interaction
+                        });
+                    }
+                }];
+            }
+        });
+    </script>
+</body>
+</html>
